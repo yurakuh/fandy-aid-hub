@@ -1,250 +1,315 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Rocket, Settings, CheckCircle2 } from "lucide-react";
+import { Rocket, Info, CheckCircle2, Package, Settings, BarChart } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function GettingStarted() {
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-          <Rocket className="h-3 w-3" />
-          Quick Start
-        </div>
-        <h1 className="text-4xl font-bold tracking-tight">Getting Started with Fandy</h1>
+      <div>
+        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          Creating Your First Checkout Charity Campaign
+        </h1>
         <p className="text-lg text-muted-foreground">
-          Follow these steps to set up your first campaign and start making an impact.
+          Follow this step-by-step guide to set up and launch your first donation campaign in Fandy.
         </p>
       </div>
 
-      <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-        <div className="flex items-start gap-4">
-          <div className="p-3 rounded-full bg-primary/20">
-            <Settings className="h-6 w-6 text-primary" />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Before You Begin</h2>
-            <p className="text-foreground/90">
-              Make sure you have installed the Fandy app from the Shopify App Store and have admin access to your store.
-            </p>
-          </div>
+      <Alert className="border-primary/30 bg-primary/5">
+        <Info className="h-4 w-4" />
+        <AlertDescription>
+          <strong>Quick Access:</strong> After installation, find Fandy under <strong>Shopify Admin → Apps → Fandy</strong>
+        </AlertDescription>
+      </Alert>
+
+      <div className="space-y-8">
+        {/* Step 0: Installation */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">0</span>
+            Installation
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-3">
+              <p className="text-muted-foreground">
+                Install the app via the <strong>Shopify App Store</strong>. Once installed, you'll be redirected to the Fandy onboarding dashboard inside your Shopify Admin.
+              </p>
+              <p className="text-muted-foreground">
+                Fandy App will appear under: <code className="px-2 py-1 bg-muted rounded text-sm">Shopify Admin → Apps → Fandy</code>
+              </p>
+            </CardContent>
+          </Card>
         </div>
-      </Card>
 
-      <div className="space-y-6">
-        <h2 className="text-2xl font-semibold">Setup Steps</h2>
-        
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              1
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Install Fandy App</h3>
-              <p className="text-foreground/90 mb-4">
-                Visit the Shopify App Store and search for "Fandy". Click "Add app" and follow the authorization process.
+        {/* Step 1: Access Dashboard */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">1</span>
+            Access the Dashboard
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-3">
+              <p className="text-muted-foreground">
+                After installation, open the Fandy app from your Shopify admin. You'll be welcomed with a clean dashboard.
               </p>
-              <Button variant="outline" size="sm" asChild>
-                <a href="https://apps.shopify.com" target="_blank" rel="noopener noreferrer">
-                  Visit App Store
-                </a>
-              </Button>
-            </div>
-          </div>
-        </Card>
+              <div className="flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20">
+                <Rocket className="h-5 w-5 text-primary flex-shrink-0" />
+                <p className="text-sm text-foreground">
+                  Click <strong>"Create campaign"</strong> to get started.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              2
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Choose Your Campaign Type</h3>
-              <p className="text-foreground/90 mb-4">
-                Decide whether you want to run a customer-funded or store-funded campaign (or both!).
+        {/* Step 2: Campaign Type */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">2</span>
+            Select Campaign Type
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-muted-foreground">
+                Choose the donation model for your campaign:
               </p>
-              <div className="grid md:grid-cols-2 gap-3">
-                <div className="p-4 bg-muted/30 rounded-lg border border-border">
-                  <p className="font-medium mb-1">Customer-Funded</p>
-                  <p className="text-sm text-muted-foreground">Best for engagement and customer loyalty</p>
+              
+              <div className="space-y-4">
+                <div className="p-4 rounded-lg border border-primary/30 bg-primary/5">
+                  <h3 className="font-semibold text-primary mb-3">Customer-Funded Options <span className="text-xs text-muted-foreground">(Customer pays)</span></h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>Fixed Amounts</strong> – Set 3–5 predefined values (e.g. $1, $3, $5, $10, $20)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>Percentage</strong> – Let customers add a % of their cart total as a donation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>Round-Up</strong> – Automatically round cart totals to the nearest dollar or ten</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="p-4 bg-muted/30 rounded-lg border border-border">
-                  <p className="font-medium mb-1">Store-Funded</p>
-                  <p className="text-sm text-muted-foreground">Best for driving conversions and AOV</p>
+
+                <div className="p-4 rounded-lg border border-accent/30 bg-accent/5">
+                  <h3 className="font-semibold text-accent mb-3">Store-Funded Option <span className="text-xs text-muted-foreground">(Store pays)</span></h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>Upsell with Donations</strong> – Define rules like:</span>
+                    </div>
+                    <ul className="ml-6 space-y-1 text-xs">
+                      <li>• Spend $50 → Store donates $25</li>
+                      <li>• Spend $100 → Store donates 10%</li>
+                    </ul>
+                    <p className="ml-6 text-xs">You can add multiple variants with different thresholds and values.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </Card>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              3
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Configure Donation Logic</h3>
-              <p className="text-foreground/90 mb-4">
-                Select how donations will be collected:
+              <p className="text-sm text-muted-foreground pt-2">
+                Click <strong>"Next"</strong> when you've selected a campaign type.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Custom amount, fixed amounts, percentage, or round-up</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Set minimum and maximum donation values if needed</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Configure suggested amounts for quick selection</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              4
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Select Causes</h3>
-              <p className="text-foreground/90 mb-4">
-                Choose how causes are selected for your campaigns:
+        {/* Step 3: Select Causes */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">3</span>
+            Select Causes
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-muted-foreground">
+                Define which charities will receive the donations. You have two options:
               </p>
-              <div className="space-y-3">
-                <div className="p-4 bg-muted/30 rounded-lg border border-border">
-                  <p className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-primary">●</span> Automated Matching
-                  </p>
+              
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="p-4 rounded-lg border border-border/50 bg-background/50">
+                  <h3 className="font-semibold text-primary mb-2 flex items-center gap-2">
+                    <Settings className="h-4 w-4" />
+                    Automated Causes
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Let Fandy's AI select causes based on customer location and preferences
+                    Fandy will automatically match each customer with relevant local charities based on their location and interests.
                   </p>
                 </div>
-                <div className="p-4 bg-muted/30 rounded-lg border border-border">
-                  <p className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-primary">●</span> Featured Cause
+                
+                <div className="p-4 rounded-lg border border-border/50 bg-background/50">
+                  <h3 className="font-semibold text-accent mb-2 flex items-center gap-2">
+                    <Package className="h-4 w-4" />
+                    Manual Selection
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Choose specific nonprofit organizations from our database.
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Choose a specific charity that aligns with your brand values
-                  </p>
-                </div>
-                <div className="p-4 bg-muted/30 rounded-lg border border-border">
-                  <p className="font-medium mb-2 flex items-center gap-2">
-                    <span className="text-primary">●</span> Custom Selection
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Curate a list of approved organizations for donation distribution
-                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Highlight one as a featured cause</li>
+                    <li>• Limit or exclude specific causes from automated matching</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </Card>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              5
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Customize Checkout Display</h3>
-              <p className="text-foreground/90 mb-4">
-                Personalize how the donation prompt appears at checkout:
+              <p className="text-sm text-muted-foreground pt-2">
+                Click <strong>"Next"</strong> to continue.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Edit display text and call-to-action</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Upload cause images and logos</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Preview on desktop and mobile</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              6
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Test Your Campaign</h3>
-              <p className="text-foreground/90 mb-4">
-                Before going live, run a test order to ensure everything works correctly:
+        {/* Step 4: Subscription Plan */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">4</span>
+            Choose Subscription Plan
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-muted-foreground mb-4">
+                Select your preferred pricing plan:
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Use Shopify's test mode or Bogus Gateway</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Verify donation amounts calculate correctly</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Check that cause information displays properly</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
+              
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="p-5 rounded-lg border border-primary/30 bg-primary/5">
+                  <h3 className="font-semibold text-primary mb-1">Basic Plan</h3>
+                  <p className="text-xs text-muted-foreground mb-3">Pay-As-You-Give</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>$0.50 per transaction</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span>No monthly fee</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span>Basic donation logic and reporting</span>
+                    </li>
+                  </ul>
+                </div>
 
-        <Card className="p-6 bg-card/50 border-border">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-              7
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-3">Launch & Monitor</h3>
-              <p className="text-foreground/90 mb-4">
-                Activate your campaign and track its performance:
+                <div className="p-5 rounded-lg border border-accent/30 bg-accent/5">
+                  <h3 className="font-semibold text-accent mb-1">Pro Plan</h3>
+                  <p className="text-xs text-muted-foreground mb-3">Growth & Personalization</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>$99/month</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span>Cause geography and preferences matching</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span>Advanced analytics and charity feedback tools</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>7-day free trial</strong></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <Alert className="border-muted bg-muted/30">
+                <Info className="h-4 w-4" />
+                <AlertDescription>
+                  <strong>Optional:</strong> Add physical donation cards at $0.15 each
+                </AlertDescription>
+              </Alert>
+
+              <p className="text-sm text-muted-foreground pt-2">
+                Click <strong>"Subscribe"</strong> to activate your plan.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/90">
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Step 5: Configure Matching */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">5</span>
+            Configure Matching Options
+          </h2>
+          <Card className="border-border/50 bg-card/30">
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-muted-foreground">
+                Fine-tune how causes are matched and how reports are generated. You can enable or disable:
+              </p>
+              
+              <div className="space-y-2">
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 border border-border/50">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Turn on your campaign in the Fandy dashboard</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Match by geography</p>
+                    <p className="text-xs text-muted-foreground">Show local causes based on the shopper's location</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 border border-border/50">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Monitor donation rates and total impact</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/90">
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Match by preferences</p>
+                    <p className="text-xs text-muted-foreground">Recommend charities based on shopping behavior</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 border border-border/50">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Analyze campaign performance and optimize</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Donor reports</p>
+                    <p className="text-xs text-muted-foreground">Send impact updates to customers after each donation</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 border border-border/50">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Match by holidays</p>
+                    <p className="text-xs text-muted-foreground">Auto-launch themed campaigns (e.g. Earth Day, Giving Tuesday)</p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-sm text-muted-foreground pt-2">
+                Click <strong>"Next"</strong> when done.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Step 6: Finish */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">6</span>
+            Finish Setup
+          </h2>
+          <Card className="border-accent/30 bg-gradient-to-br from-primary/5 to-accent/5">
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex items-start gap-3">
+                <Rocket className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Campaign Ready!</h3>
+                  <p className="text-muted-foreground mb-3">
+                    Once all steps are completed, you'll see a confirmation screen. Click <strong>"Go to dashboard"</strong> to manage or launch additional campaigns.
+                  </p>
+                  <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                    <p className="text-sm text-foreground flex items-center gap-2">
+                      <BarChart className="h-4 w-4 text-primary" />
+                      Your first checkout charity campaign is now live. Once live you can edit your campaigns using <strong>Campaigns</strong> and <strong>Settings</strong> tabs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-
-      <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-        <h2 className="text-2xl font-semibold mb-4">Need Help?</h2>
-        <p className="text-foreground/90 mb-4">
-          Our support team is here to help you get started. Reach out anytime!
-        </p>
-        <div className="flex gap-3">
-          <Button variant="default" asChild>
-            <a href="mailto:support@fandy.me">Contact Support</a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="https://calendly.com/yurakuh" target="_blank" rel="noopener noreferrer">
-              Book a Demo
-            </a>
-          </Button>
-        </div>
-      </Card>
     </div>
   );
 }

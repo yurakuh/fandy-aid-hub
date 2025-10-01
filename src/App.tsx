@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelpLayout } from "./components/HelpLayout";
+import Introduction from "./pages/Introduction";
 import UnderstandingCampaigns from "./pages/UnderstandingCampaigns";
 import CustomerFunded from "./pages/CustomerFunded";
 import StoreFunded from "./pages/StoreFunded";
@@ -22,7 +23,8 @@ const App = () => (
       <BrowserRouter>
         <HelpLayout>
           <Routes>
-            <Route path="/" element={<UnderstandingCampaigns />} />
+            <Route path="/" element={<Introduction />} />
+            <Route path="/understanding-campaigns" element={<UnderstandingCampaigns />} />
             <Route path="/customer-funded" element={<CustomerFunded />} />
             <Route path="/store-funded" element={<StoreFunded />} />
             <Route path="/getting-started" element={<GettingStarted />} />
