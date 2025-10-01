@@ -9,6 +9,7 @@ import UnderstandingCampaigns from "./pages/UnderstandingCampaigns";
 import CustomerFunded from "./pages/CustomerFunded";
 import StoreFunded from "./pages/StoreFunded";
 import GettingStarted from "./pages/GettingStarted";
+import AppBlocksEmbeds from "./pages/AppBlocksEmbeds";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/customer-funded" element={<CustomerFunded />} />
             <Route path="/store-funded" element={<StoreFunded />} />
             <Route path="/getting-started" element={<GettingStarted />} />
+            <Route path="/app-blocks-embeds" element={<AppBlocksEmbeds />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

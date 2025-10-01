@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { Book, DollarSign, Store, Rocket, HelpCircle, Mail, Search, Info } from "lucide-react";
+import { Book, DollarSign, Store, Rocket, HelpCircle, Mail, Search, Info, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -14,6 +14,7 @@ const navItems = [
   { title: "Customer-Funded Campaigns", url: "/customer-funded", icon: DollarSign },
   { title: "Store-Funded Campaigns", url: "/store-funded", icon: Store },
   { title: "Getting Started", url: "/getting-started", icon: Rocket },
+  { title: "App Blocks & Embeds", url: "/app-blocks-embeds", icon: Puzzle },
   { title: "FAQs", url: "/faqs", icon: HelpCircle },
   { title: "Contact Support", url: "/contact", icon: Mail },
 ];
