@@ -6,7 +6,7 @@ export default function AppBlocksEmbeds() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h1 id="app-blocks-embeds" className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Using App Blocks & App Embeds
         </h1>
         <p className="text-lg text-muted-foreground">
@@ -23,7 +23,7 @@ export default function AppBlocksEmbeds() {
 
       <div className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+          <h2 id="manual-placement" className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">1</span>
             Manual Placement (Theme Editor)
           </h2>
@@ -77,7 +77,7 @@ export default function AppBlocksEmbeds() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+          <h2 id="automatic-placement" className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">2</span>
             Automatic Placement (via Fandy Admin)
           </h2>
@@ -182,7 +182,7 @@ export default function AppBlocksEmbeds() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+          <h2 id="best-practices" className="text-2xl font-semibold mb-4 flex items-center gap-2 text-foreground">
             <CheckCircle2 className="h-6 w-6 text-primary" />
             Best Practice Recommendations
           </h2>
