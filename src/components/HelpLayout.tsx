@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { Book, DollarSign, Store, Rocket, HelpCircle, Mail, Search, Info, Puzzle } from "lucide-react";
+import { Book, DollarSign, Store, Rocket, CircleHelp as HelpCircle, Mail, Search, Info, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 

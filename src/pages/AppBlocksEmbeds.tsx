@@ -1,4 +1,4 @@
-import { Puzzle, MousePointer, Settings, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Puzzle, MousePointer, Settings, CircleCheck as CheckCircle2, TriangleAlert as AlertTriangle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
