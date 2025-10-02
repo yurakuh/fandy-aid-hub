@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Book, DollarSign, Store, Rocket, CircleHelp as HelpCircle, Mail, Search, Info, Puzzle, Sparkles, BarChart3 } from "lucide-react";
+import { Book, DollarSign, Store, Rocket, CircleHelp as HelpCircle, Mail, Info, Puzzle, Sparkles, BarChart3, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 interface HelpLayoutProps {
   children: ReactNode;
@@ -22,6 +22,8 @@ const navItems = [
 ];
 
 export function HelpLayout({ children }: HelpLayoutProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col w-full">
       {/* Header */}
@@ -34,14 +36,39 @@ export function HelpLayout({ children }: HelpLayoutProps) {
             </div>
             <span className="text-sm text-muted-foreground border-l border-border pl-3">Help Center</span>
           </div>
-          <div className="hidden md:flex items-center gap-2 flex-1 max-w-md ml-8">
-            <Search className="h-4 w-4 text-muted-foreground absolute ml-3" />
-            <Input 
-              placeholder="Search documentation..." 
-              className="pl-9 bg-muted/50 border-border"
-            />
-          </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="sm" className="lg:hidden">
+                  <Menu className="h-4 w-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-64">
+                <SheetHeader>
+                  <SheetTitle>Navigation</SheetTitle>
+                </SheetHeader>
+                <nav className="mt-6 space-y-1">
+                  {navItems.map((item) => (
+                    <NavLink
+                      key={item.url}
+                      to={item.url}
+                      end
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                          isActive
+                            ? "bg-primary/10 text-primary border border-primary/20"
+                            : "text-foreground/80 hover:bg-muted hover:text-foreground"
+                        }`
+                      }
+                    >
+                      <item.icon className="h-4 w-4" />
+                      {item.title}
+                    </NavLink>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
             <Button variant="outline" size="sm" asChild>
               <a href="https://cc.fandy.me" target="_blank" rel="noopener noreferrer">
                 Main Site
