@@ -11,6 +11,7 @@ import StoreFunded from "./pages/StoreFunded";
 import GettingStarted from "./pages/GettingStarted";
 import AppBlocksEmbeds from "./pages/AppBlocksEmbeds";
 import ImpactAutomation from "./pages/ImpactAutomation";
+import Analytics from "./pages/Analytics";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/getting-started" element={<GettingStarted />} />
             <Route path="/app-blocks-embeds" element={<AppBlocksEmbeds />} />
             <Route path="/impact-automation" element={<ImpactAutomation />} />
+            <Route path="/analytics" element={<Analytics />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

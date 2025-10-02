@@ -26,10 +26,10 @@ export default function Contact() {
           </div>
           <h3 className="font-semibold mb-2">Email Support</h3>
           <p className="text-sm text-muted-foreground mb-3">
-            Get help via email within 24 hours
+            Reach us directly for any questions
           </p>
-          <a href="mailto:support@fandy.me" className="text-primary hover:underline text-sm font-medium">
-            support@fandy.me
+          <a href="mailto:hello@fandy.me" className="text-primary hover:underline text-sm font-medium">
+            hello@fandy.me
           </a>
         </Card>
 
@@ -52,75 +52,15 @@ export default function Contact() {
           <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
             <MessageSquare className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="font-semibold mb-2">Live Chat</h3>
+          <h3 className="font-semibold mb-2">Feedback & Feature Requests</h3>
           <p className="text-sm text-muted-foreground mb-3">
-            Chat with us in the Fandy app
+            We welcome feedback
           </p>
-          <span className="text-sm text-muted-foreground">Available in dashboard</span>
+          <a href="mailto:y.kukhalski@fandy.me" className="text-primary hover:underline text-sm font-medium">
+            y.kukhalski@fandy.me
+          </a>
         </Card>
       </div>
-
-      <Card className="p-8 bg-card/50 border-border">
-        <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
-        
-        <form className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="name">Name *</Label>
-              <Input 
-                id="name" 
-                placeholder="Your name" 
-                className="bg-background border-border"
-                required
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="email">Email *</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="your@email.com" 
-                className="bg-background border-border"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="store">Shopify Store URL</Label>
-            <Input 
-              id="store" 
-              placeholder="yourstore.myshopify.com" 
-              className="bg-background border-border"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="subject">Subject *</Label>
-            <Input 
-              id="subject" 
-              placeholder="How can we help?" 
-              className="bg-background border-border"
-              required
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="message">Message *</Label>
-            <Textarea 
-              id="message" 
-              placeholder="Describe your question or issue in detail..." 
-              className="bg-background border-border min-h-32"
-              required
-            />
-          </div>
-
-          <Button type="submit" size="lg" className="w-full md:w-auto">
-            Send Message
-          </Button>
-        </form>
-      </Card>
 
       <Card className="p-6 bg-muted/20 border-border">
         <h2 className="text-xl font-semibold mb-3">Before Contacting Support</h2>
