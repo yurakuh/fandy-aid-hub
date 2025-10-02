@@ -1,6 +1,12 @@
 import { Rocket, Info, CheckCircle2, Package, Settings, BarChart } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import screenshot1 from "@/assets/getting-started-1.png";
+import screenshot2 from "@/assets/getting-started-2.png";
+import screenshot3 from "@/assets/getting-started-3.png";
+import screenshot4 from "@/assets/getting-started-4.png";
+import screenshot5 from "@/assets/getting-started-5.png";
+import screenshot6 from "@/assets/getting-started-6.png";
 
 export default function GettingStarted() {
   return (
@@ -57,6 +63,9 @@ export default function GettingStarted() {
                   Click <strong>"Create campaign"</strong> to get started.
                 </p>
               </div>
+              <div className="mt-4 rounded-lg overflow-hidden border border-border/30">
+                <img src={screenshot1} alt="Fandy Dashboard - Create Campaign" className="w-full" />
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -111,6 +120,14 @@ export default function GettingStarted() {
               <p className="text-sm text-muted-foreground pt-2">
                 Click <strong>"Next"</strong> when you've selected a campaign type.
               </p>
+              <div className="space-y-4 mt-4">
+                <div className="rounded-lg overflow-hidden border border-border/30">
+                  <img src={screenshot2} alt="Select Campaign Type - Customer Funded Options" className="w-full" />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border/30">
+                  <img src={screenshot3} alt="Select Campaign Type - Store Funded Options" className="w-full" />
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -156,6 +173,14 @@ export default function GettingStarted() {
               <p className="text-sm text-muted-foreground pt-2">
                 Click <strong>"Next"</strong> to continue.
               </p>
+              <div className="space-y-4 mt-4">
+                <div className="rounded-lg overflow-hidden border border-border/30">
+                  <img src={screenshot4} alt="Select Causes - Automated Causes" className="w-full" />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border/30">
+                  <img src={screenshot5} alt="Select Causes - Manual Selection and Featured Cause" className="w-full" />
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -279,6 +304,9 @@ export default function GettingStarted() {
               <p className="text-sm text-muted-foreground pt-2">
                 Click <strong>"Next"</strong> when done.
               </p>
+              <div className="mt-4 rounded-lg overflow-hidden border border-border/30">
+                <img src={screenshot6} alt="Configure Matching Options" className="w-full" />
+              </div>
             </CardContent>
           </Card>
         </div>
